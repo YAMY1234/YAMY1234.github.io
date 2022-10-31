@@ -1,11 +1,11 @@
 import os
-path = r"D:/Program_Files_Resources/hexo2/themes/Butterfly/source/img/新来的网络图片/"
+path = "D:\\Program_Files_Resources\\hexobasse\\themes\\Butterfly\\source\\img\\新来的网络图片\\"
 # 获取该目录下所有文件，存入列表中
 f = os.listdir(path)
 print(len(f))
 
 print(f[0])
-pre_n = 17
+pre_n = 1
 n = 0
 for i in f:
     # 设置旧文件名（就是路径+文件名）
