@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>project collections: L2TP VPN Experiment | Have you seen my cat?</title><meta name="keywords" content="Rabbit, here we go!"><meta name="author" content="YAMY"><meta name="copyright" content="YAMY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="L2TPvpn service construction and data capture, analysis and static load replacement based on ubuntu operating system IntroductionExperimental RequirementsBased on C++ Design and implement a simple s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="project collections: L2TP VPN Experiment">
+<meta property="og:url" content="http://yamy1234.github.io/2022/12/13/project-collections-L2TP_VPN_Experiment/index.html">
+<meta property="og:site_name" content="Have you seen my cat?">
+<meta property="og:description" content="L2TPvpn service construction and data capture, analysis and static load replacement based on ubuntu operating system IntroductionExperimental RequirementsBased on C++ Design and implement a simple s">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yamy1234.github.io/img/1.jpg">
+<meta property="article:published_time" content="2022-12-13T04:23:37.000Z">
+<meta property="article:modified_time" content="2022-12-13T04:24:59.847Z">
+<meta property="article:author" content="YAMY">
+<meta property="article:tag" content="Rabbit, here we go!">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yamy1234.github.io/img/1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yamy1234.github.io/2022/12/13/project-collections-L2TP_VPN_Experiment/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'project collections: L2TP VPN Experiment',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-13 12:24:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Have you seen my cat?</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">project collections: L2TP VPN Experiment</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-12-13T04:23:37.000Z" title="Created 2022-12-13 12:23:37">2022-12-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-12-13T04:24:59.847Z" title="Updated 2022-12-13 12:24:59">2022-12-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="project collections: L2TP VPN Experiment"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="wps1.png" alt="img"> </p>
+<p>L2TPvpn service construction and data capture, analysis and static load replacement based on ubuntu operating system</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="Experimental-Requirements"><a href="#Experimental-Requirements" class="headerlink" title="Experimental Requirements"></a>Experimental Requirements</h2><p>Based on C++ Design and implement a simple system to achieve:</p>
+<ol>
+<li><p>Crawl l2tp protocol Traffic based on windows7 or linux.</p>
+</li>
+<li><p>For each Target User, monitor its l2tp requests in real time and analyze, restore, and present its connections and business payloads.</p>
+</li>
+<li><p>Support payload replacement for specific targets.</p>
+</li>
+</ol>
+<p>Build a demo: Use a laptop to achieve the above functions of surfing the Internet on a mobile phone.</p>
+<h2 id="Design-Introduction"><a href="#Design-Introduction" class="headerlink" title="Design Introduction"></a>Design Introduction</h2><p>Layer 2 tunneling protocol (English: Layer Two Tunneling Protocol, abbreviated as L2TP) is a virtual tunneling protocol commonly used in virtual private networks. The L2TP protocol itself does not provide encryption and reliability verification functions, and can be used with security protocols to achieve encrypted data transmission. The encryption protocol often used with the L2TP protocol is IPsec, and when these two protocols are used together, they are usually collectively referred to as L2TP&#x2F;IPsec.</p>
+<p>This experiment is based on the Linux Kernel Ubuntu operating system to build L2TP-VPN, data transmission and device communication under the L2TP virtual network; using C language based on libpcap library files to achieve L2TP data packet capture, specific Target User filtering, data packet analysis; based on netfilter library for L2TP data packet static load replacement.</p>
+<p>For the first question, we refer to L2TP.sh script to build L2TP service on Ubuntu 16.04 operating system, use libpcap library for L2TP data packet capture, in the loop_pcap core Function to achieve the presentation of L2TP data Message, on the basis of the corresponding analysis of each data packet hexadecimal Message content, which belongs to the extracted L2TP Message payload information.</p>
+<p>For the second question, based on the L2TP Message payload information, for different Target Users, we independently write pcapsetfilter Function in the “IP layer”, “ UDP layer”, “L2TP version”, “L2TP tunnel” four levels to filter the Target User; on the basis of filter filtering, we further analyze the extracted L2TP Message payload information, and achieve the extraction implementation of the L2TP Message payload through the underlying binary processing methods such as bit and shift. Finally, the business load analysis of “single target and L2TP server” interaction and “multi-target data interaction” are analyzed respectively.</p>
+<p>For the third question, we use the netfilter open source library to achieve the use of the Linux Kernel module Netfilter hook in the network segment of the L2TP connection network connection UDP Message, and modify some of the data. First, deploy the L2TP server mount hook program, grab the udp Message, and use Client_1 to simulate the UDP protocol to Client_2 code packet of the released version. Second, L2TP sever hook Message, modify Message, forward Message, Client_2 receive message, and view the changed payload information.</p>
+<h1 id="Environment-configuration"><a href="#Environment-configuration" class="headerlink" title="Environment configuration"></a>Environment configuration</h1><h3 id="Network-topology"><a href="#Network-topology" class="headerlink" title="Network topology"></a>Network topology</h3><p>The real network is provided by ios15 (172.20.10.1) as a web server to ensure that the L2TP server, Client 1, and Client 2 are under the same 172.20.10 network segment for L2TP connection.</p>
+<p>172.20.10.1——ios15，web server</p>
+<p>172.20.10.4——ubuntu-16.04，L2TP server</p>
+<p>172.20.10.3——windows10，Client_1（Rabbit）</p>
+<p>172.20.10.5——windows10，Client_2（Cat）</p>
+<p><img src="wps2.jpg" alt="img"> </p>
+<p>Figure 1 Overall architecture of network topology</p>
+<h3 id="Environment-construction"><a href="#Environment-construction" class="headerlink" title="Environment construction"></a>Environment construction</h3><h4 id="Configure-L2TP-server"><a href="#Configure-L2TP-server" class="headerlink" title="Configure L2TP server"></a>Configure L2TP server</h4><p>We use the shell scripting language to build L2TP-vpn on the ububtu operating system. First, refer to the github repository <a target="_blank" rel="noopener" href="https://github.com/makedary/across.git">https://github.com/makedary/across.git</a> Cloud as a Service build VPN the writing method, build L2TP.sh to build ubuntu virtual L2TP service.</p>
+<p>Permission and execution through the chmod command, the deployment information and results are shown in the following figure (the main information is the virtual network segment - 192.168.18 network segment, used to build L2TP services):</p>
+<p><img src="wps3.jpg" alt="img"> </p>
+<p>After the build is successful, use the l2tp -a command to add users. Create two users here, the usernames are “cat” and “rabbit”, which are the most Client_1 and Client_2 required for this experiment. The user list is shown in the figure below:</p>
+<p><img src="wps4.jpg" alt="img"> </p>
+<h4 id="Add-user-connection"><a href="#Add-user-connection" class="headerlink" title="Add user connection"></a>Add user connection</h4><p>We first try to connect to the L2TP server with the “rabbit” account, and the connection result is shown in the figure below:</p>
+<p><img src="wps5.jpg" alt="img"> </p>
+<p>Subsequently, the “rabbit” account checks the network configuration in the ipconfig in the machine, and you can see that the ip address of its L2TP service is 192.168.18.2, under the 192.168.18 network segment built.</p>
+<p><img src="wps6.jpg" alt="img"> </p>
+<p>Check the configuration of the L2TP server (ubuntu virtual machine ). At this time, the virtual IP address of the L2TP server is 192.168.18.1, and the IP address of the point-to-point connection (the L2TP connection under the rabbit account in the picture above) is 192.168.18.2.</p>
+<p><img src="wps7.jpg" alt="img"> </p>
+<h4 id="Verify-user-connection"><a href="#Verify-user-connection" class="headerlink" title="Verify user connection"></a>Verify user connection</h4><p>In order to verify whether the network connection is successful, try to send and receive data packets between the connector and the service party to verify whether the L2TP service is successfully established:</p>
+<p><img src="wps8.jpg" alt="img"><img src="wps9.jpg" alt="img"> </p>
+<p>We try to use the L2TP server and the “Rabbit” account machine to send ping requests to each other. It can be seen from the results above that the two can receive and send data packets to each other, and the connection is successful.</p>
+<h4 id="Build-a-complete-L2TP-topology-network-structure"><a href="#Build-a-complete-L2TP-topology-network-structure" class="headerlink" title="Build a complete L2TP topology network structure"></a>Build a complete L2TP topology network structure</h4><p>We use the same method to connect Client_2 (“cat” account):</p>
+<p><img src="wps10.jpg" alt="img"> </p>
+<p>It can be observed that the new 192.168.18.3 point connection, comprising Client_1 (192.168.18.2) and Client_2 (192.168.18.3) in the configuration of both the connection configuration.</p>
+<p><img src="wps11.jpg" alt="img"> </p>
+<p>We try to send data packets between Client_1 and Client_2 under L2TP service.</p>
+<p><img src="wps12.jpg" alt="img"><img src="wps13.jpg" alt="img"> </p>
+<p>It can be seen that the two can send and successfully receive data packets to each other under the 192.168.18 network segment.</p>
+<h2 id="L2TP-capture-and-its-business-load-analysis"><a href="#L2TP-capture-and-its-business-load-analysis" class="headerlink" title="L2TP capture and its business load analysis"></a>L2TP capture and its business load analysis</h2><h3 id="Open-Source-Library-Selection"><a href="#Open-Source-Library-Selection" class="headerlink" title="Open Source Library Selection"></a>Open Source Library Selection</h3><p>First we need to be based on linux gcc The open source library libpcap for packet capture, presentation and presentation. Libpcap is a network data packet capture Function library, and tcpdump under Linux is based on it. However, because the level of libpcap is the application layer, it can only monitor the Traffic itself and cannot replace, modify and forward the data in it. Therefore, in the process of solving questions 1 and 2, the libpcap library can be used to implement.</p>
+<h3 id="Traffic-analysis-method"><a href="#Traffic-analysis-method" class="headerlink" title="Traffic analysis method"></a>Traffic analysis method</h3><p>After obtaining the data packet through libpcap, we need to analyze the content of the hexadecimal data packet itself, find the location of the corresponding L2TP in the data packet, and analyze the protocol Traffic of the L2TP itself.</p>
+<p>L2TP Message header format:</p>
+<p><img src="wps14.png" alt="img"> </p>
+<p>Figure 2 L2TP Message format</p>
+<p>According to the above content, we need to use the “pointer” to extract, analyze and process the data packet part of the L2TP Message on the basis of the captured data; use the method of “bit and” and “shift” to extract the data of the specific bit of L2TP. The specific content to be extracted is shown in the following figure:</p>
+<p>Type (T): identifies the type of message, 0 is a data message, 1 is a control message.</p>
+<p>Length (L): When set to 1, it means that the value of the Length field exists, and the L bit of the control message must be set to 1.</p>
+<p>X bit: reserved bits, all reserved bits are set to 0.</p>
+<p>Sequence (S): When set to 1, it means that Ns and Nr exist, and must be set to 1 for the control message S.</p>
+<p>Offset ( O ): set to 1, indicating Offset Size field exists, for the control message O must be set to 0.</p>
+<p>Priority (P): Only for data messages, for control message P position 0, when data message this position 1, indicating that the message should be prioritized in this queue and transmission.</p>
+<p>Ver: Must be 2, indicating the version of the L2TP data header.</p>
+<p>Length: Identifies the length (in bytes) of the entire Message.</p>
+<p>Tunnel ID: Identifies the L2TP control link. The L2TP Tunnel identifier has only local meaning. The ID allocated at both ends of a Tunnel may be different. The Tunnel in the header refers to the recipient’s Tunnel ID, not the sender’s. The local Tunnel ID allocated when the Tunnel is created. Through Tunnel ID AVPs and peers exchange Tunnel ID information.</p>
+<p>Session ID: Identifies a session in the tunnel, only local meaning, a session at both ends ID may be different.</p>
+<p>Ns: Identifies the sequence number to send data or control messages, starting at 0, incrementing by 1, to 216 and starting at 0.</p>
+<p>Nr: Identifies the next expected control message. The value of Nr is set to Ns + 1 of the previous received control message. This is an acknowledgment of the previous received control message. Data messages ignore Nr.</p>
+<p>Offset Size: Identifies the offset of the payload data, if the value exists.</p>
+<h3 id="code-implementation"><a href="#code-implementation" class="headerlink" title="code implementation"></a>code implementation</h3><p>We capture the content of the L2TP data protocol through libpcap data packet. The overall code flow is shown in the figure below:</p>
+<p><img src="wps15.jpg" alt="img"> </p>
+<p>Figure 3 L2TP capture overall code flow</p>
+<p>It can be seen from the above figure that the network segment to be captured is first passed in through the main Function parameter (ens33 here). Secondly, the L2TP server passes the ip and mask of the corresponding machine into the pcap_lookupnet for capture; the pcap_create generates the pcap capture pointer and structure, and uses pcap_compile Compilation to capture and execute the corresponding capture statement. Through the “pcap_setfilter” filter out “1701 udp port” (udp port opened by L2TP) to resolve the corresponding traffic load. Finally, all preprocessing information is given to the pcap_loop on the left to perform the capture of the core l2tp data packet.</p>
+<p>Based on the above content, we need to build my_package_handler core parsing Function, which parses, analyzes and renders L2TP data based on the real-time capture of l2tp data packets. my_package_handler implements the following core functions:</p>
+<h4 id="data-packet-filtering"><a href="#data-packet-filtering" class="headerlink" title="data packet filtering"></a>data packet filtering</h4><p>According to the requirements of the topic, we need to eliminate the data packet that does not meet the requirements and parse the data packet that meets the requirements. We filter based on different levels of data packet, progressive layer by layer, and continuous refinement:</p>
+<p><img src="wps16.jpg" alt="img"> </p>
+<ol>
+<li>IPV4 Ethernet layer screening</li>
+</ol>
+<p>When the received data packet is non-ip data packet, send a prompt message and filter:</p>
+<p><img src="wps17.jpg" alt="img"> </p>
+<p>2, UDP layer screening</p>
+<p>Since the UDP UDP protocol content is the data segment referred to by a 9-byte pointer with an offset headed by ip_header, it is judged whether it is a UDP protocol according to the protocol number, and filtered if it is a non-UDP protocol:</p>
+<p><img src="wps18.jpg" alt="img"> </p>
+<ol start="3">
+<li>L2TP protocol number screening</li>
+</ol>
+<p>When the l2tp protocol does not meet the requirements, filter the corresponding L2TP data packet:</p>
+<p><img src="wps19.jpg" alt="img"> </p>
+<p>Traffic load analysis</p>
+<p>After we determine that the Message is an L2TP data packet and contains L2TP data packet information, we can determine the L2TP data offset position according to the space occupied and length of the Upper Level Protocol Message:</p>
+<p><img src="wps20.jpg" alt="img"> </p>
+<p>According to the L2TP Message structure mentioned in the analysis, we further refine the L2TP Message according to its bit-level offset, and extract the load information involved in the L2TP Message included in the figure below by using “bit and” according to each bit of information:</p>
+<p><img src="wps21.jpg" alt="img"> </p>
+<p>Fig. 5 Refined L2TP Message structure and load extraction mode diagram</p>
+<p>####Business load extraction</p>
+<p>Combined with the above load pattern diagram, we define the following variables to store its business load information:</p>
+<p><img src="wps22.jpg" alt="img"> </p>
+<p>The positions of different load information in the packet are extracted through “bit and” and “shift”:</p>
+<p><img src="wps23.jpg" alt="img"> </p>
+<p>Determine the total length and offset of the l2tp data packet by combining the 2-3 bytes of the l2tp header information:</p>
+<p><img src="wps24.jpg" alt="img"> </p>
+<p>Combined with the 4-7 bytes of the l2tp header information to determine the tunnel number and session_id:</p>
+<p><img src="wps25.jpg" alt="img"> </p>
+<p>Combined with the 8-12 bytes of information in the l2tp header, it is determined that Ns (the sequence number identifying the sent data or control message) and Nr (the sequence number identifying the next expected received control message)</p>
+<p><img src="wps26.jpg" alt="img"> </p>
+<h3 id="Realize-effect-display"><a href="#Realize-effect-display" class="headerlink" title="Realize effect display"></a>Realize effect display</h3><h4 id="L2TP-packet-filtering-and-payload-capture-analysis"><a href="#L2TP-packet-filtering-and-payload-capture-analysis" class="headerlink" title="L2TP packet filtering and payload capture analysis"></a>L2TP packet filtering and payload capture analysis</h4><p>In the process of this effect display, it simulates the process of Client_1 using L2TP service to access the Internet. As can be seen from the figure, first run the pre-Compilation mycap.sh script file and start capturing on the 192.168.18.1 network segment:</p>
+<p><img src="wps27.jpg" alt="img"> </p>
+<p>For each packet captured, filter for IP information, UDP information, L2TP information:</p>
+<ol>
+<li>Filter according to whether it contains L2TP packets, and filter the data packets with L2TP protocol errors:</li>
+</ol>
+<p><img src="wps28.jpg" alt="img"> </p>
+<p>Figure 6 Non-IP packets as conditional filtering</p>
+<p><img src="wps29.jpg" alt="img"> </p>
+<p>Figure 7 L2TP packets as conditional filtering</p>
+<p>Filter according to the tunnel_id of L2TP, filter the data packet that the tunnel is not successfully established</p>
+<p><img src="wps30.jpg" alt="img"> </p>
+<p>The filtered valid L2TP data packet is presented as follows:</p>
+<p><img src="wps31.jpg" alt="img"> </p>
+<p>Figure shows the capture and analysis results for the L2TP Message, since the data into the more part of the load field for analysis, the L2TP Message protocol version number is 5, source_ip, target_ip are involved in this experiment Client_1 and L2TP_server IP address, as can be seen from the Type field L2TP protocol number is 0, indicating that it carries data information rather than control information; tunnel_id and session_id used to distinguish different users.</p>
+<h4 id="Multi-objective-information-interaction-business-analysis"><a href="#Multi-objective-information-interaction-business-analysis" class="headerlink" title="Multi-objective information interaction business analysis"></a>Multi-objective information interaction business analysis</h4><p>On the basis of the above, we add a new user Client_2 (L2TP virtual IP is 192.168.18.3), and on this basis, analyze the information of Client_1, Client_2 and L2TP servers and the mutual communication between them, as well as the information of mutual communication between Client_1 and Client_2, and analyze the traffic load information of L2TP communication under multi-target at one time.</p>
+<p><img src="wps32.jpg" alt="img"><img src="wps33.jpg" alt="img"> </p>
+<p>The above diagram shows the interaction between Client_1 (192.168.18.2) and Client_2 (192.168.18.3) and the Host: L2TP server (192.168.18.1) respectively. The two have different Tunnel_id and session_id to distinguish the access of different users.</p>
+<p>The left figure shows the information interaction content between Client_1 and Host: L2TP server:. The l2tp Message type &#x3D;&#x3D; 0 presented in the log analyzes the number of “control” signals transmitted by the L2TP data packet, unnel_id and session_id are 49267 and 60558 respectively. The right figure shows the information interaction content between Client_2 and Host: L2TP server:; the l2tp Message type &#x3D;&#x3D; 0 shows that the L2TP data packet transmits “data” information; the unnel_id and session_id are 49267 and 60558 respectively.</p>
+<p>In addition to the communication between different users and the Host (L2TP server), we also need to examine the signal communication between different Client_1 and Client_2.</p>
+<p><img src="wps34.jpg" alt="img"><img src="wps35.jpg" alt="img"> </p>
+<p>Signal communication between the captured Client_1 (192.168.18.2) to Client_2 (192.168.18.3). source_id address &#x3D;&#x3D; 192.168.18.2 in the left figure indicates that the original IP address of the captured sender is 192.168.18.2; target_id address &#x3D;&#x3D; 192.168.18.3 in the right figure indicates that the target IP is Client_2 (192.168.18.2), indicating that Client_2 sends information to Client_1.</p>
+<p>Both interactive content, respectively, with different tunnel_id and session_id when communicating with both the l2tp server; L2tp category number is 0, indicating that the captured data is transmitted between the Client_1 and Client_2.</p>
+<h2 id="Implementation-of-target-specific-payload-replacement"><a href="#Implementation-of-target-specific-payload-replacement" class="headerlink" title="Implementation of target-specific payload replacement"></a>Implementation of target-specific payload replacement</h2><h3 id="Open-Source-Library-Selection-1"><a href="#Open-Source-Library-Selection-1" class="headerlink" title="Open Source Library Selection"></a>Open Source Library Selection</h3><p>Because the libpcap library referenced in question 1 and 2 is at the application layer, it cannot replace, modify and forward the data in the link layer. Therefore, the implementation of question 3 is based on Netfilter in the Linux Kernel module to achieve payload replacement.</p>
+<p>Netfilter is a Message processing (filtering or modifying) framework integrated into the Linux Kernel Network Protocol Stack. It is a subsystem of the linux Kernel. Netfilter adopts Modularization design and has good extensibility. Its important tool module, IPTables, is connected from the iptables of User Mode to the Netfilter of Kernel Mode. Netfilter and IP Protocol Stack are seamlessly integrated, and allow users to filter, address translation, processing and other operations on datagrams.</p>
+<h3 id="Experiment-target"><a href="#Experiment-target" class="headerlink" title="Experiment target"></a>Experiment target</h3><p>In the L2TP connection, use Linux kernel module Netfilter hook UDP Message, and modify some of the data.</p>
+<p><img src="wps36.jpg" alt="img"> </p>
+<h3 id="Experiment-flow"><a href="#Experiment-flow" class="headerlink" title="Experiment flow"></a>Experiment flow</h3><ol>
+<li><p>L2TP sever mount hook program, grab UDP Message.</p>
+</li>
+<li><p>Open Client_1, L2TP sever, Client_2 wireshark for traffic capture.</p>
+</li>
+<li><p>Client_1 use python to simulate UDP protocol to Client_2 code packet of the released version.</p>
+</li>
+<li><p>L2TP sever hook Message, modify Message, forward Message.</p>
+</li>
+<li><p>Client_2 receive messages</p>
+</li>
+</ol>
+<h3 id="Experimental-process"><a href="#Experimental-process" class="headerlink" title="Experimental process"></a>Experimental process</h3><h3 id="Client-1-data-packet-UDP-data-packet"><a href="#Client-1-data-packet-UDP-data-packet" class="headerlink" title="Client_1 data packet UDP data packet"></a>Client_1 data packet UDP data packet</h3><p>Using python to simulate UDP data packet, UDP packet data content is “cat lend rabbit 5000 dollars” code is as follows:</p>
+<p><img src="wps37.jpg" alt="img"> </p>
+<h4 id="L2TP-sever-modify-Message"><a href="#L2TP-sever-modify-Message" class="headerlink" title="L2TP sever modify Message"></a>L2TP sever modify Message</h4><h5 id="hook-Message"><a href="#hook-Message" class="headerlink" title="hook Message"></a>hook Message</h5><p>The Message is intercepted using the Hook Function in the Linux Kernel module Netfilter, and its fields are printed to the log. Here we only capture the packets with specific content sent Client_1 UDP packets.</p>
+<p><img src="wps38.jpg" alt="img"> </p>
+<p>The following figure shows the effect of extracting Message achieved by the above code, where data [0-7] &#x3D; cat lend, indicating that in kernel mode, we caught a specific data packet, and can show the basic information of the data packet.</p>
+<p><img src="wps39.jpg" alt="img"> </p>
+<h4 id="Modify-Message"><a href="#Modify-Message" class="headerlink" title="Modify Message"></a>Modify Message</h4><p>In the previous step, you can already Hook to the Message, and now you can modify its content. Through conditional judgment, find the protocol packet sent for the Client_1, and then modify the UDP Message data through pointer operation, changing “cat lend rabbit 5000 dollars” to “dog lend rabbit 5000 dollars”. UDP The protocol packet is sent for the .</p>
+<p><img src="wps40.jpg" alt="img"> </p>
+<h5 id="defined-by-the-udphdr-structure-UDP-header-as-follows"><a href="#defined-by-the-udphdr-structure-UDP-header-as-follows" class="headerlink" title="defined by the udphdr structure UDP header, as follows:"></a>defined by the udphdr structure UDP header, as follows:</h5><p>In linux&#x2F;udp.h udphdr structure:</p>
+<p><img src="wps41.jpg" alt="img"> </p>
+<h5 id="struct-udphdr-source-c-code"><a href="#struct-udphdr-source-c-code" class="headerlink" title="struct udphdr source c code:"></a>struct udphdr source c code:</h5><h5 id><a href="#" class="headerlink" title></a><img src="wps42.jpg" alt="img"></h5><p>#####Get the starting address of the data</p>
+<p>The hook function of netfilter captures the data packet at PREROUTING, moves the pointer to the first address of the data segment, and replaces the data in linux Kernel Mode.</p>
+<p><img src="wps43.jpg" alt="img"> </p>
+<h5 id="Recalculate-checksum"><a href="#Recalculate-checksum" class="headerlink" title="Recalculate checksum"></a>Recalculate checksum</h5><p>After modifying the data of the data packet, the most important thing is to calculate the UDP The checksum is calculated. There is a corresponding Function in the Kernel, but it is necessary to understand the meaning of each parameter when calling. In particular, pay attention to the calculation result to reverse the checksum and keep it consistent with Netfilter.</p>
+<p>UDP Calculating the checksum is similar to calculating the checksum of IP datagram header, but the difference is that IP datagram checksum only checks IP the header of the datagram, but UDP checksum checks both the header and the data part together.</p>
+<p>On the sender side, first put all zeros into the checksum field. Then the pseudo header and UDP User datagram are made up of many 16-bit strings. If the data part of the UDP user datagram is not an even number of bytes, fill in an all-zero byte (the last odd byte should be the 16-bit high byte and the low byte should be 0, this byte is not sent). Then the sum of these 16-bit words is calculated according to the binary inverse. After writing the binary inverse of this sum to the checksum field, send this UDP user datagram. </p>
+<h3 id="Realize-effect-display-1"><a href="#Realize-effect-display-1" class="headerlink" title="Realize effect display"></a>Realize effect display</h3><h4 id="Client-1"><a href="#Client-1" class="headerlink" title="Client_1"></a>Client_1</h4><p>In Client_1 wireshark intercepted 2 types of Traffic packets, the intercepted packets are:</p>
+<p>A data packet Client_1 (192.168.18.2) to Client_2 (192.168.18.3) with the data part “cat lend rabbit 5000 dollars”.</p>
+<p>The data packet sent by the agent (114.87.232.108) to the Client_2 (192.168.18.3) with the data part “dog lend rabbit 5000 dollars”.</p>
+<p>Where ip is 114.87.232.108 is the gateway address of ios15 (Web Sever), the L2TPserver proxy uses the gateway to send the intercepted data packet.</p>
+<p><img src="wps45.jpg" alt="img"> </p>
+<p><img src="wps46.jpg" alt="img"> </p>
+<p>From this result, it can be seen that the packet originally sent by Client_1 (192.168.18.2) is “cat”, and after modification by the L2TP server udp The change of the content of the Message from “cat” to “dog” can preliminarily indicate that the modification is successful, but whether it is successful “intercepted” and “modified forwarding” needs to wait until the data packet capture on the L2TP sever and Client2 ends for further verification.</p>
+<h4 id="L2TP-sever"><a href="#L2TP-sever" class="headerlink" title="L2TP sever"></a>L2TP sever</h4><p>In L2TP wireshark intercepts two types of traffic packets: traffic packets (originally “cat”) sent by Client_1 (192.168.18.2) to Client_2 (192.168.18.3), and traffic packets (modified to “dog”) sent by L2TP server proxy (114.87.232.108) to Client_2 (192.168.18.3).</p>
+<p><img src="wps47.jpg" alt="img"><img src="wps48.jpg" alt="img"><img src="wps49.jpg" alt="img"><img src="wps50.jpg" alt="img"> </p>
+<p>It can be clearly seen from wireshark that the packet sent by Client_1 is modified by L2TP sever, and the correctness of the payload replacement result is verified.</p>
+<h4 id="Client-2"><a href="#Client-2" class="headerlink" title="Client_2"></a>Client_2</h4><p>In Client_2 wireshark intercepted only 1 Traffic packet, and the intercepted packets are:</p>
+<p>The data packet sent by the agent to the Client_2 (192.168.18.3), the data part of which is “dog lend rabbit 5000 dollars”.</p>
+<p><img src="wps51.jpg" alt="img"> </p>
+<p>In the end, only one data packet is received, and its content is changed from “cat” to “dog”, which shows that “interception” is successful and “modification and forwarding” is successful.</p>
+<p>In summary, the Client_1 initiated by the L2TP server intercepts and modifies its udp udp data segment, modifies the internal data from cat to dog, and replaces the content by the L2TP server and sends it to the Client_2. After being captured by wireshark, the successful payload replacement is verified.</p>
+<h2 id="Problems-encountered-in-the-process-and-solutions"><a href="#Problems-encountered-in-the-process-and-solutions" class="headerlink" title="Problems encountered in the process and solutions"></a>Problems encountered in the process and solutions</h2><ol>
+<li>Under L2TP connection, Client_1 can ping Client_2, Client_2 cannot ping Client_1.</li>
+</ol>
+<p><img src="wps52.jpg" alt="img"><img src="wps53.jpg" alt="img"> </p>
+<p>Cause: L2TP sever will automatically assign a virtual address from the address pool. In our example, the virtual address is 192.168.18.xxx. After the remote dial L2TP is successful, the gateway allocated by L2TP sever will replace the original gateway and become the new default gateway. Client_1 does not use the gateway allocated by L2TP in the actual operation process, so Client_1 can access the extranet, but cannot access the intranet under L2TP, so it cannot reply to Client_2.</p>
+<p><strong>Solution:</strong></p>
+<p>Under Windows: Open Network Adapter Options, select L2TP’s VPN , select Properties, Internet Protocol 2 Version, Properties, Advanced, and check Use Default Gateway on Remote Networks.</p>
+<p><img src="wps54.jpg" alt="img"> </p>
+<p>Figure 10 Connection VPN After the machine can not access the Internet solution</p>
+<p>From the above, we need to restore the L2TP gateway (the first command), and then let the route to the remote network go from the virtual address allocated by the L2TP sever (the second command). Finally, the problem is successfully resolved.</p>
+<ol start="2">
+<li>Because Netfilter is running in Kernel Mode instead of User Mode, the debugging difficulty escalates. The system Kernel reports the error “The guest operating system is disabled CPU , please shut down or restart the virtual machine “.</li>
+</ol>
+<p><img src="wps55.jpg" alt="img"> </p>
+<p>Reason: When capturing and modifying a Message, the restriction is too broad, and only the protocol is UDP , which causes the data content of some UDP other packages containing important information to be changed, causing the operating system to crash.</p>
+<p>Solution: In the original protocol for UDP for the restriction, add the restriction data [0:3] &#x3D;&#x3D; ‘cat’.</p>
+<ol start="3">
+<li>On the basis of 2, when running the Netfilter mounted Kernel code, L2TP cannot connect.</li>
+</ol>
+<p>Reason: Through the “dmesg -wH” command to monitor the Kernel status in real time, it is found that Client_1 the Kernel status changes when connecting to L2TP sever. The L2TP packet can not connect without confirming that there is no error. I thought of the reason explained by the teacher in class, so I guessed that it is related to the running speed. After commenting part of the code of Netfilter, it is found that L2TP can connect, which verifies the conjecture.</p>
+<p>Solution: Add judgment conditions, and directly filter data packets that do not meet the solution conditions in 2.</p>
+<h1 id="6-Summary"><a href="#6-Summary" class="headerlink" title="6 Summary"></a>6 Summary</h1><p>Through this experiment, we have a deeper understanding of the internal structure and operating mechanism of L2TP. It stimulates us to learn the linux Kernel in depth for the first time and understand the mechanism running in the kernel mode. At the same time, it is also the first time to learn how to use Message capture, which solidifies the use of C++ the lowest-level method to achieve Message content extraction and analysis. C++ Message capture</p>
+<p>In the process of environment construction, we tried to use windows10, windowsXP virtual machine , windows10-wsl (windows built-in linux kernel), centos6 Cloud as a Service server , all failed, and finally chose linux-16.04 as our L2TP server. In the process of trying, we borrowed some shell scripts, and at the same time modified the shell scripts for the problems of linux-16.04 to run and deploy successfully.</p>
+<p>In the process of Message capture and modification, we first tried the libpcap packet for capture and interception, but since in the early stage of the experiment we only focused on the convenient nature of libpcap in packet interception and use, but ignored the application layer, the analysis level of libpcap, and could not go deep into the link layer to modify the data packet being transmitted. Therefore, in the later stage, the netfilter package is used as the main framework and runs in the linux Kernel to modify the data packet.</p>
+<p>In the process of implementing the third question, interception, replacement, and forwarding, we found that modifying the data packet incorrectly or forwarding the data packet too slowly will cause the operating system to crash or fail to connect. Because the script runs in kernel mode, according to the existing operating system knowledge, once an error occurs in the script running in kernel mode, the break is irreversible. We have also experienced numerous shutdowns and restarts in the process of trying, and finally found the correct method to modify the data packet, achieving the replacement, modification, frame verification, forwarding of the data packet, and the other party successfully received the modified Message content.</p>
+<p>In the follow-up information security principles and information security direction of the learning process, will further enhance their ability to deal with security issues, make good use of more software analysis, processing and other methods to solve the problem, so as to further enhance their ability to deal with information security issues.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>Li Xianjun, Zhang Shaofang, Li Yan. L2TP-based remote access VPN implementation [J]. Computer Knowledge and Technology, 2019,15 (22): 50-52.</p>
+<p>[2] Ni Jie, Xu Zhiwei, Li Hongzhi. PPTP VPN Implementation and security testing VPN with L2TP&#x2F;IPSec [J]. Electronic Technology and Software Engineering, 2019 (12): 192.</p>
+<p>[3]<a target="_blank" rel="noopener" href="https://www.netfilter.org/">https://www.netfilter.org/</a></p>
+<p>[4] Linux network programming - libpcap detailed explanation [<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/145094996">https://zhuanlan.zhihu.com/p/145094996</a></p>
+<p>[5] Principle and use of libpcap [<a target="_blank" rel="noopener" href="https://blog.csdn.net/ptmozhu/article/details/78743126]">https://blog.csdn.net/ptmozhu/article/details/78743126]</a></p>
+<p>[6] [layer 2 tunneling protocol - wiki Baike , free Baike Encyclopedia (wikipedia.org) ] (<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/">https://zh.wikipedia.org/wiki/</a> layer 2 tunneling protocol)</p>
+<p>[7] [Netfilter - HOOK mechanism in Netfilter] (<a target="_blank" rel="noopener" href="https://blog.csdn.net/windeal3203/article/details/51204911">https://blog.csdn.net/windeal3203/article/details/51204911</a>) [<a target="_blank" rel="noopener" href="https://blog.csdn.net/windeal3203/article/details/51204911]">https://blog.csdn.net/windeal3203/article/details/51204911]</a></p>
+<p>[8] [L2TP under Ubuntu] (<a target="_blank" rel="noopener" href="https://blog.51cto.com/spencergra/1921627">https://blog.51cto.com/spencergra/1921627</a>) [<a target="_blank" rel="noopener" href="https://blog.51cto.com/spencergra/1921627]">https://blog.51cto.com/spencergra/1921627]</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">YAMY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yamy1234.github.io/2022/12/13/project-collections-L2TP_VPN_Experiment/">http://yamy1234.github.io/2022/12/13/project-collections-L2TP_VPN_Experiment/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/12/13/project-collections-RSA_Encript_System/"><img class="next-cover" src="/img/4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">project collections: RSA Encrypt System</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">YAMY</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Experimental-Requirements"><span class="toc-number">1.1.</span> <span class="toc-text">Experimental Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design-Introduction"><span class="toc-number">1.2.</span> <span class="toc-text">Design Introduction</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Environment-configuration"><span class="toc-number">2.</span> <span class="toc-text">Environment configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Network-topology"><span class="toc-number">2.0.1.</span> <span class="toc-text">Network topology</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Environment-construction"><span class="toc-number">2.0.2.</span> <span class="toc-text">Environment construction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Configure-L2TP-server"><span class="toc-number">2.0.2.1.</span> <span class="toc-text">Configure L2TP server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Add-user-connection"><span class="toc-number">2.0.2.2.</span> <span class="toc-text">Add user connection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Verify-user-connection"><span class="toc-number">2.0.2.3.</span> <span class="toc-text">Verify user connection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Build-a-complete-L2TP-topology-network-structure"><span class="toc-number">2.0.2.4.</span> <span class="toc-text">Build a complete L2TP topology network structure</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#L2TP-capture-and-its-business-load-analysis"><span class="toc-number">2.1.</span> <span class="toc-text">L2TP capture and its business load analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Open-Source-Library-Selection"><span class="toc-number">2.1.1.</span> <span class="toc-text">Open Source Library Selection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Traffic-analysis-method"><span class="toc-number">2.1.2.</span> <span class="toc-text">Traffic analysis method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-implementation"><span class="toc-number">2.1.3.</span> <span class="toc-text">code implementation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#data-packet-filtering"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">data packet filtering</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Realize-effect-display"><span class="toc-number">2.1.4.</span> <span class="toc-text">Realize effect display</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#L2TP-packet-filtering-and-payload-capture-analysis"><span class="toc-number">2.1.4.1.</span> <span class="toc-text">L2TP packet filtering and payload capture analysis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multi-objective-information-interaction-business-analysis"><span class="toc-number">2.1.4.2.</span> <span class="toc-text">Multi-objective information interaction business analysis</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Implementation-of-target-specific-payload-replacement"><span class="toc-number">2.2.</span> <span class="toc-text">Implementation of target-specific payload replacement</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Open-Source-Library-Selection-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">Open Source Library Selection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Experiment-target"><span class="toc-number">2.2.2.</span> <span class="toc-text">Experiment target</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Experiment-flow"><span class="toc-number">2.2.3.</span> <span class="toc-text">Experiment flow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Experimental-process"><span class="toc-number">2.2.4.</span> <span class="toc-text">Experimental process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Client-1-data-packet-UDP-data-packet"><span class="toc-number">2.2.5.</span> <span class="toc-text">Client_1 data packet UDP data packet</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#L2TP-sever-modify-Message"><span class="toc-number">2.2.5.1.</span> <span class="toc-text">L2TP sever modify Message</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#hook-Message"><span class="toc-number">2.2.5.1.1.</span> <span class="toc-text">hook Message</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Modify-Message"><span class="toc-number">2.2.5.2.</span> <span class="toc-text">Modify Message</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#defined-by-the-udphdr-structure-UDP-header-as-follows"><span class="toc-number">2.2.5.2.1.</span> <span class="toc-text">defined by the udphdr structure UDP header, as follows:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#struct-udphdr-source-c-code"><span class="toc-number">2.2.5.2.2.</span> <span class="toc-text">struct udphdr source c code:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">2.2.5.2.3.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Recalculate-checksum"><span class="toc-number">2.2.5.2.4.</span> <span class="toc-text">Recalculate checksum</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Realize-effect-display-1"><span class="toc-number">2.2.6.</span> <span class="toc-text">Realize effect display</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Client-1"><span class="toc-number">2.2.6.1.</span> <span class="toc-text">Client_1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#L2TP-sever"><span class="toc-number">2.2.6.2.</span> <span class="toc-text">L2TP sever</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Client-2"><span class="toc-number">2.2.6.3.</span> <span class="toc-text">Client_2</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Problems-encountered-in-the-process-and-solutions"><span class="toc-number">2.3.</span> <span class="toc-text">Problems encountered in the process and solutions</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Summary"><span class="toc-number">3.</span> <span class="toc-text">6 Summary</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">3.1.</span> <span class="toc-text">References</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/project-collections-L2TP_VPN_Experiment/" title="project collections: L2TP VPN Experiment"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="project collections: L2TP VPN Experiment"/></a><div class="content"><a class="title" href="/2022/12/13/project-collections-L2TP_VPN_Experiment/" title="project collections: L2TP VPN Experiment">project collections: L2TP VPN Experiment</a><time datetime="2022-12-13T04:23:37.000Z" title="Created 2022-12-13 12:23:37">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/project-collections-RSA_Encript_System/" title="project collections: RSA Encrypt System"><img src="/img/4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="project collections: RSA Encrypt System"/></a><div class="content"><a class="title" href="/2022/12/13/project-collections-RSA_Encript_System/" title="project collections: RSA Encrypt System">project collections: RSA Encrypt System</a><time datetime="2022-12-13T04:16:37.000Z" title="Created 2022-12-13 12:16:37">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/project-collections-LinuxPersonalFirewall/" title="project collections: Linux Personal Firewall"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="project collections: Linux Personal Firewall"/></a><div class="content"><a class="title" href="/2022/12/13/project-collections-LinuxPersonalFirewall/" title="project collections: Linux Personal Firewall">project collections: Linux Personal Firewall</a><time datetime="2022-12-13T04:13:37.000Z" title="Created 2022-12-13 12:13:37">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/project-collections-CARBuddy/" title="project collections: CARBuddy"><img src="/img/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="project collections: CARBuddy"/></a><div class="content"><a class="title" href="/2022/12/13/project-collections-CARBuddy/" title="project collections: CARBuddy">project collections: CARBuddy</a><time datetime="2022-12-13T03:35:37.000Z" title="Created 2022-12-13 11:35:37">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/project-collections-JiYun/" title="project collections: JiYun"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="project collections: JiYun"/></a><div class="content"><a class="title" href="/2022/12/13/project-collections-JiYun/" title="project collections: JiYun">project collections: JiYun</a><time datetime="2022-12-13T03:35:37.000Z" title="Created 2022-12-13 11:35:37">2022-12-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By YAMY</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
