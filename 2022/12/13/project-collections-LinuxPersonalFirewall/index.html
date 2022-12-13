@@ -1,0 +1,509 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>project collections: Linux Personal Firewall | Have you seen my cat?</title><meta name="keywords" content="Rabbit, here we go!"><meta name="author" content="YAMY"><meta name="copyright" content="YAMY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux Personal Firewall User Manualvideo demoIn order to show the effect of the software conveniently, you can click on the link below to watch the video demonstration: Firewall Basic Functions[https:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="project collections: Linux Personal Firewall">
+<meta property="og:url" content="http://yamy1234.github.io/2022/12/13/project-collections-LinuxPersonalFirewall/index.html">
+<meta property="og:site_name" content="Have you seen my cat?">
+<meta property="og:description" content="Linux Personal Firewall User Manualvideo demoIn order to show the effect of the software conveniently, you can click on the link below to watch the video demonstration: Firewall Basic Functions[https:">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yamy1234.github.io/img/2.jpg">
+<meta property="article:published_time" content="2022-12-13T04:13:37.000Z">
+<meta property="article:modified_time" content="2022-12-13T04:12:29.584Z">
+<meta property="article:author" content="YAMY">
+<meta property="article:tag" content="Rabbit, here we go!">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yamy1234.github.io/img/2.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yamy1234.github.io/2022/12/13/project-collections-LinuxPersonalFirewall/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'project collections: Linux Personal Firewall',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-13 12:12:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/2.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Have you seen my cat?</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">project collections: Linux Personal Firewall</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-12-13T04:13:37.000Z" title="Created 2022-12-13 12:13:37">2022-12-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-12-13T04:12:29.584Z" title="Updated 2022-12-13 12:12:29">2022-12-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="project collections: Linux Personal Firewall"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Linux-Personal-Firewall-User-Manual"><a href="#Linux-Personal-Firewall-User-Manual" class="headerlink" title="Linux Personal Firewall User Manual"></a>Linux Personal Firewall User Manual</h1><h2 id="video-demo"><a href="#video-demo" class="headerlink" title="video demo"></a>video demo</h2><p><strong>In order to show the effect of the software conveniently, you can click on the link below to watch the video demonstration:</strong></p>
+<p><strong>Firewall Basic Functions</strong>[<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WB4y127rP?share_source=copy_web%5D">https://www.bilibili.com/video/BV1WB4y127rP?share_source=copy_web]</a> (<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WB4y127rP?share_source=copy_web">https://www.bilibili.com/video/BV1WB4y127rP?share_source=copy_web</a>)</p>
+<p><strong>Firewall Custom Rules :</strong>[ <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xS4y1c7Cs?share_source=copy_web%5D">https://www.bilibili.com/video/BV1xS4y1c7Cs?share_source=copy_web]</a> (<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xS4y1c7Cs?share_source=copy_web">https://www.bilibili.com/video/BV1xS4y1c7Cs?share_source=copy_web</a>)</p>
+<p>**Firewall Advanced, Functions:**<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1SS4y1A79s?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1SS4y1A79s?spm_id_from=333.999.0.0</a></p>
+<h2 id="running-environment"><a href="#running-environment" class="headerlink" title="running environment"></a>running environment</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps163.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>The software runs under the Ubuntu 14.04.6 LTS version, and the download Path of the system installation file is: <a target="_blank" rel="noopener" href="https://releases.ubuntu.com/14.04/ubuntu-14.04.6-desktop-amd64.iso">https://releases.ubuntu.com/14.04/ubuntu-14.04.6-desktop-amd64.iso</a></p>
+<h5 id="we-chose-to-implement-this-software-in-this-system-for-the-following-three-reasons"><a href="#we-chose-to-implement-this-software-in-this-system-for-the-following-three-reasons" class="headerlink" title="we chose to implement this software in this system for the following three reasons:"></a><strong>we chose to implement this software in this system for the following three reasons:</strong></h5><p>• In Linux earlier version of Netfilter interface is relatively simple API interface is relatively simple, and the development time of this project is relatively tight.</p>
+<p>In higher versions of Ubuntu, for the sake of system security, some network operations of the software are limited, which makes the implementation of the firewall more complicated, and the libnetfilter_conntrack we use requires the system to have the following operating environment:</p>
+<p>libnetfilter_conntrack requires libnfnetlink and a kernel that includes the nfnetlink_conntrack subsystem (initial support &gt;&#x3D; 2.6.14, recommended &gt;&#x3D; 2.6.18)</p>
+<p>nfnetlink_conntrack subsystem is better supported on Ubuntu 14.</p>
+<p>Because the course design requires us to design with reference to Windows Firewall, and a prominent feature of Windows Firewall is: when the firewall intercepts unknown Traffic, a pop-up window will let the user decide to block or allow</p>
+<p>Finally, we found that this can be achieved using Ubuntu 14’s NFQUEUE, which is not high performance because it needs to send network packets to the user program. However, compared to stacking iptables rules, NFQUEUE is more flexible. For new technologies with the same flexibility such as XDP, xt_bpf, etc., NFQUEUE has a wider scope and can be adapted to many old systems.</p>
+<p>For the above reasons, we chose Ubuntu 14 as the operating system for development.</p>
+<p>in virtual machine Install operating system </p>
+<p>Considering that you may not have Linux operating system installed, here is how to install the Ubuntu 14.04.6 LTS operating system in the VMware virtual machine Ubuntu 14.04.6 LTS operating system in the VMware virtual machine software.</p>
+<h4 id="Install-VMware"><a href="#Install-VMware" class="headerlink" title="Install VMware"></a>Install VMware</h4><p>The VMware installation package is provided on the genuine software platform of Tongji University, you can follow the following tutorial to install the software: <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40950957/article/details/80467513">https://blog.csdn.net/qq_40950957/article/details/80467513</a></p>
+<h4 id="Install-Ubuntu-14-04-6-LTS"><a href="#Install-Ubuntu-14-04-6-LTS" class="headerlink" title="Install Ubuntu 14.04.6 LTS"></a>Install Ubuntu 14.04.6 LTS</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps164.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>You can install Ubuntu 14 system in VMware through a few simple steps, and the download Path of the system installation file is: <a target="_blank" rel="noopener" href="https://releases.ubuntu.com/14.04/ubuntu-14.04.6-desktop-amd64.iso">https://releases.ubuntu.com/14.04/ubuntu-14.04.6-desktop-amd64.iso</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps165.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>After installing the system, install VMware Tools to copy the software installation package directly to the virtual machine machine.</p>
+<h2 id="Install-the-software"><a href="#Install-the-software" class="headerlink" title="Install the software"></a>Install the software</h2><p>Download the software Compressed Packet submitted by us. Compressed Packet already contains the Compilation binary executable file and decompresses it. At this time, the directory structure of the software is as follows:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├─argtable</span><br><span class="line">├─common</span><br><span class="line">├─gui</span><br><span class="line">│  └─iptable_base</span><br><span class="line">└─sha256</span><br></pre></td></tr></table></figure>
+
+<h2 id="Start-the-software"><a href="#Start-the-software" class="headerlink" title="Start the software"></a>Start the software</h2><p>The software completed in this experiment consists of two parts: the back end of the firewall and the firewall GUI interface. So we need to start these two parts separately when starting the software:</p>
+<h3 id="Start-the-firewall-backend"><a href="#Start-the-firewall-backend" class="headerlink" title="Start the firewall backend"></a>Start the firewall backend</h3><p>Enter the folder where the software code is located, right-click in the blank space to open the end point:</p>
+<p><img src="wps166.png" alt="img"></p>
+<p>Enter the following command to install dependencies, you may be prompted for an administrator password.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install make g++ libnetfilter-queue-dev libnetfilter-conntrac k-dev libcap-dev python-qt4</span><br></pre></td></tr></table></figure>
+
+<p>After the installation is complete, enter the following command:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./lpfw.app</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps167.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>Because the firewall requires network traffic interception at the system level, you may be prompted for an administrator password. If the Port Number in the figure above appears, the software backend starts successfully.</p>
+<h3 id="Start-the-firewall-GUI"><a href="#Start-the-firewall-GUI" class="headerlink" title="Start the firewall GUI"></a>Start the firewall GUI</h3><p>To create a new end point, enter the following command:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd gui</span><br><span class="line">sudo python gui.py</span><br></pre></td></tr></table></figure>
+
+<p><img src="wps168.png" alt="img"></p>
+<p>Starting the User Interface does not require administrator privileges, the software interface starts immediately after entering the command.</p>
+<h2 id="use-software"><a href="#use-software" class="headerlink" title="use software"></a>use software</h2><h2 id="Traffic-interception"><a href="#Traffic-interception" class="headerlink" title="Traffic interception"></a>Traffic interception</h2><h5 id="video-presentation"><a href="#video-presentation" class="headerlink" title="video presentation:"></a><strong>video presentation:</strong></h5><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps169.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WB4y127rP?share_source=copy_web">https://www.bilibili.com/video/BV1WB4y127rP?share_source=copy_web</a></p>
+<p>After the software starts, it will automatically monitor all network requests in the system. For example, when you open the system’s browser, when you open any web page, the firewall will automatically block network requests and pop up the above page. Click Show details to view the connection</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps170.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>Details of the request:</p>
+<p>As can be seen in the figure, the firewall automatically obtains the intercepted program name, Path, and operation of the program request (as well as IP and Port Number), which can help the user determine whether the network request should be allowed.</p>
+<p>At the same time, there are four kinds of operations that users can perform: allow once, reject once, always allow, and always reject, where always allow and always reject are achieved by checking the Remember option.</p>
+<h2 id="Traffic-monitoring"><a href="#Traffic-monitoring" class="headerlink" title="Traffic monitoring"></a>Traffic monitoring</h2><p>After the user operates on the network request, the program will automatically record relevant information in the User Interface: including program name, process ID, operation type, program Path, and transmission details.</p>
+<p><img src="wps171.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps172.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>The above information will be dynamically updated over time, which is convenient for users to track the status of the link in real time:</p>
+<h3 id="Behavior-log"><a href="#Behavior-log" class="headerlink" title="Behavior log"></a>Behavior log</h3><p>In order to facilitate the user to analyze the behavior of the firewall and avoid misoperation, the software will also automatically record the behavior log of the firewall. The firewall will output the log to the end point by default for general recording. The following is an example of the log:</p>
+<p><img src="wps173.png" alt="img"></p>
+<p>If the user needs to further analyze the firewall log, the following parameters can also be passed in when starting the background:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--logging_facility = file</span><br><span class="line">--Log-info = <span class="number">1</span> <span class="keyword">or</span> <span class="number">0</span> (<span class="number">1</span> on, <span class="number">0</span> off)</span><br><span class="line">--log-traffic  = <span class="number">1</span> <span class="keyword">or</span> <span class="number">0</span></span><br><span class="line">--log-debug  = <span class="number">1</span> <span class="keyword">or</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="wps174.png" alt="img"></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>The log file is saved in the tmp directory by default. The method of reading the log is as follows:</p>
+<ol>
+<li>Go to Linux tmp directory</li>
+</ol>
+<p><img src="wps175.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps176.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>You can see all log files saved by the firewall:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="wps172.png" alt="img"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Customize-default-rules"><a href="#Customize-default-rules" class="headerlink" title="Customize default rules"></a>Customize default rules</h3><h5 id="video-presentation-1"><a href="#video-presentation-1" class="headerlink" title="video presentation:"></a><strong>video presentation:</strong></h5><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xS4y1c7Cs?share_source=copy_web">https://www.bilibili.com/video/BV1xS4y1c7Cs?share_source=copy_web</a></p>
+<p>In order to provide users with greater freedom, in addition to adding rules through pop-up windows, the software can also read user-defined rule files at startup.</p>
+<ol>
+<li>Go to Linux etc directory</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps178.png" alt="img"></td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li>Find lpfw.rules file</li>
+</ol>
+<p><img src="wps179.png" alt="img"></p>
+<ol start="3">
+<li>In order to edit this file directly, you need to open it with administrator administrator privileges:</li>
+</ol>
+<p><img src="wps180.png" alt="img"></p>
+<p>This file contains all the rules for which you have previously selected “Remember My Decision for All future connections”, or you can add new rules yourself according to the format in the file. For example:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps181.png" alt="img"></td>
+</tr>
+</tbody></table>
+<h3 id="View-and-add-program-rules-directly-GUI-View-and-add-program-rules-directly"><a href="#View-and-add-program-rules-directly-GUI-View-and-add-program-rules-directly" class="headerlink" title="View and add program rules directly GUI View and add program rules directly"></a>View and add program rules directly GUI View and add program rules directly</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps182.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>In order to further facilitate user customization of rules, we also provide corresponding options in the menu:</p>
+<p>Under the Iptable option, you can view all existing rules, or add new custom rules, which is easier than modifying the rules file</p>
+<p>• Review existing rules</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps183.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>• Added custom rules</p>
+<p><img src="wps184.png" alt="img"></p>
+<p>You can see that with the addition of the REJECT ALL rule, all internet connections are blocked:</p>
+<p><img src="wps185.png" alt="img"></p>
+<h3 id="Delete-already-added-rules"><a href="#Delete-already-added-rules" class="headerlink" title="Delete already added rules"></a>Delete already added rules</h3><p>In the upper left menu bar, the Rules tab contains actions that users can perform on rules</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps186.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>To delete a rule, just click to select a rule, then click Delete selected:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps187.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img src="wps188.png" alt="img"></p>
+<p>Users can click on any table header to sort according to the data corresponding to the column, which is convenient for users to filter rules when there is more data.</p>
+<h3 id="Automatically-generate-rules-according-to-the-protocol"><a href="#Automatically-generate-rules-according-to-the-protocol" class="headerlink" title="Automatically generate rules according to the protocol"></a>Automatically generate rules according to the protocol</h3><h5 id="video-presentation-2"><a href="#video-presentation-2" class="headerlink" title="video presentation:"></a><strong>video presentation:</strong></h5><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1SS4y1A79s?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1SS4y1A79s?spm_id_from=333.999.0.0</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps189.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>The firewall can also automatically generate corresponding iptable rules according to the characteristics of the protocol, which is convenient for users to carry out advanced configuration. The currently adapted network protocols include SSH protocol, FTP protocol, DNS protocol and Web connection.</p>
+<p>Users click on the type of rule they want to specify, fill in the corresponding fields, and the software can automatically generate interception rules:</p>
+<p><img src="wps190.png" alt="img"> </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps191.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>Users can check or modify the generated code by themselves. After confirming that the rules are correct, click Confirm.</p>
+<p>Compilation software from source code</p>
+<p>If you need to recompile the software, the submitted code contains the software’s Makefile file, just open end point in the software directory and run the following command:</p>
+<p>make clean make lpfw</p>
+<p><img src="wps192.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps193.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>After waiting for the Compilation to succeed, the executable file appears in the software root directory as shown in the following figure:</p>
+<h2 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><p>Some common usage issues are listed below:</p>
+<h3 id="software-crash"><a href="#software-crash" class="headerlink" title="software crash"></a>software crash</h3><p>If the software is unresponsive or crashes for some reason, you can follow the steps below to restart the firewall:</p>
+<ol>
+<li><p>Open end point</p>
+</li>
+<li><p>Enter the following command</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep lpfw</span><br></pre></td></tr></table></figure>
+
+<p>This is to list all running Firewall instances, we need to focus on the file Path which stores the Path for the firewall program</p>
+<p><img src="wps194.png" alt="img"> </p>
+<ol start="3">
+<li>Next, you can run the following command to kill the crashed or unresponsive firewall process: Replace [pid] with the PID just queried</li>
+</ol>
+<p>sudo kill -9 [PID]</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img src="wps195.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>You may be asked for an administrator password.</p>
+<ol start="4">
+<li>Finally, we have to clear the iptables rules added by the firewall to restore normal network connection</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -F</span><br></pre></td></tr></table></figure>
+
+<h3 id="GUI-No-program-display"><a href="#GUI-No-program-display" class="headerlink" title="GUI No program display"></a>GUI No program display</h3><ol>
+<li><p>This situation is usually due to the firewall daemon does not exit normally, at this time if the user has created a new firewall process, GUI The program will not know which background to communicate with, so it will not show the network connection.</p>
+</li>
+<li><p>The solution to the problem is also very simple: close all running firewall processes, and GUI Client, restart the program. (Please start the background program first, and then start GUI Client)</p>
+</li>
+</ol>
+<h2 id="Change-Log"><a href="#Change-Log" class="headerlink" title="Change Log"></a>Change Log</h2><p>•<strong>2022-4-6:V0.10</strong> Implement basic functions</p>
+<p>•<strong>2022-4-12:V0.11</strong> Improve the manual about environment configuration content</p>
+<p>•<strong>2022-4-13:V0.20</strong>Add program traffic real-time monitoring function</p>
+<p>•<strong>2022-4-16:V0.21</strong>Added manual failure crash handling scheme</p>
+<p>•<strong>2022-4-18:V0.30</strong> Improve the log function</p>
+<p><strong>2022-4-22:V0.40</strong>Added iptable rule direct query modification function, users can no longer click to enter lpfw.rule</p>
+<p>Custom rules can be added directly to the file</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">YAMY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yamy1234.github.io/2022/12/13/project-collections-LinuxPersonalFirewall/">http://yamy1234.github.io/2022/12/13/project-collections-LinuxPersonalFirewall/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/12/13/project-collections-CARBuddy/"><img class="next-cover" src="/img/2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">project collections: CARBuddy</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">YAMY</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-Personal-Firewall-User-Manual"><span class="toc-number">1.</span> <span class="toc-text">Linux Personal Firewall User Manual</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#video-demo"><span class="toc-number">1.1.</span> <span class="toc-text">video demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#running-environment"><span class="toc-number">1.2.</span> <span class="toc-text">running environment</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#we-chose-to-implement-this-software-in-this-system-for-the-following-three-reasons"><span class="toc-number">1.2.0.0.1.</span> <span class="toc-text">we chose to implement this software in this system for the following three reasons:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-VMware"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">Install VMware</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-Ubuntu-14-04-6-LTS"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">Install Ubuntu 14.04.6 LTS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-the-software"><span class="toc-number">1.3.</span> <span class="toc-text">Install the software</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Start-the-software"><span class="toc-number">1.4.</span> <span class="toc-text">Start the software</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Start-the-firewall-backend"><span class="toc-number">1.4.1.</span> <span class="toc-text">Start the firewall backend</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Start-the-firewall-GUI"><span class="toc-number">1.4.2.</span> <span class="toc-text">Start the firewall GUI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#use-software"><span class="toc-number">1.5.</span> <span class="toc-text">use software</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Traffic-interception"><span class="toc-number">1.6.</span> <span class="toc-text">Traffic interception</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#video-presentation"><span class="toc-number">1.6.0.0.1.</span> <span class="toc-text">video presentation:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Traffic-monitoring"><span class="toc-number">1.7.</span> <span class="toc-text">Traffic monitoring</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Behavior-log"><span class="toc-number">1.7.1.</span> <span class="toc-text">Behavior log</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Customize-default-rules"><span class="toc-number">1.7.2.</span> <span class="toc-text">Customize default rules</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#video-presentation-1"><span class="toc-number">1.7.2.0.1.</span> <span class="toc-text">video presentation:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#View-and-add-program-rules-directly-GUI-View-and-add-program-rules-directly"><span class="toc-number">1.7.3.</span> <span class="toc-text">View and add program rules directly GUI View and add program rules directly</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delete-already-added-rules"><span class="toc-number">1.7.4.</span> <span class="toc-text">Delete already added rules</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Automatically-generate-rules-according-to-the-protocol"><span class="toc-number">1.7.5.</span> <span class="toc-text">Automatically generate rules according to the protocol</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#video-presentation-2"><span class="toc-number">1.7.5.0.1.</span> <span class="toc-text">video presentation:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Troubleshooting"><span class="toc-number">1.8.</span> <span class="toc-text">Troubleshooting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#software-crash"><span class="toc-number">1.8.1.</span> <span class="toc-text">software crash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GUI-No-program-display"><span class="toc-number">1.8.2.</span> <span class="toc-text">GUI No program display</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Change-Log"><span class="toc-number">1.9.</span> <span class="toc-text">Change Log</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/project-collections-LinuxPersonalFirewall/" title="project collections: Linux Personal Firewall"><img src="/img/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="project collections: Linux Personal Firewall"/></a><div class="content"><a class="title" href="/2022/12/13/project-collections-LinuxPersonalFirewall/" title="project collections: Linux Personal Firewall">project collections: Linux Personal Firewall</a><time datetime="2022-12-13T04:13:37.000Z" title="Created 2022-12-13 12:13:37">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/project-collections-CARBuddy/" title="project collections: CARBuddy"><img src="/img/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="project collections: CARBuddy"/></a><div class="content"><a class="title" href="/2022/12/13/project-collections-CARBuddy/" title="project collections: CARBuddy">project collections: CARBuddy</a><time datetime="2022-12-13T03:35:37.000Z" title="Created 2022-12-13 11:35:37">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/project-collections-JiYun/" title="project collections: JiYun"><img src="/img/4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="project collections: JiYun"/></a><div class="content"><a class="title" href="/2022/12/13/project-collections-JiYun/" title="project collections: JiYun">project collections: JiYun</a><time datetime="2022-12-13T03:35:37.000Z" title="Created 2022-12-13 11:35:37">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/project-collections-Smart-Vehicle/" title="project collections: Smart-Vehicle"><img src="/img/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="project collections: Smart-Vehicle"/></a><div class="content"><a class="title" href="/2022/12/13/project-collections-Smart-Vehicle/" title="project collections: Smart-Vehicle">project collections: Smart-Vehicle</a><time datetime="2022-12-13T03:13:06.000Z" title="Created 2022-12-13 11:13:06">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/30/graduate-training-one/" title="graduate training one"><img src="/img/5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="graduate training one"/></a><div class="content"><a class="title" href="/2022/10/30/graduate-training-one/" title="graduate training one">graduate training one</a><time datetime="2022-10-30T13:06:36.000Z" title="Created 2022-10-30 21:06:36">2022-10-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By YAMY</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
